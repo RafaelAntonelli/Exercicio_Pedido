@@ -14,7 +14,9 @@ public class Exercicio_Pedido {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
+
+		System.out.print("Enter cliente data:");
+		System.out.print("Name: ");
 		
 	
 		System.out.print("Enter cliente data:");
