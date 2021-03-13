@@ -19,6 +19,7 @@ public class Exercicio_Pedido {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		Order order = new Order();
+		
 		Date orderDate = new Date(System.currentTimeMillis());
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -49,16 +50,18 @@ public class Exercicio_Pedido {
 			OrderItem item = new OrderItem(quantity, price, new Product(nameP, price));
 			order.addItem(item);
 		}
-		
+		/*Product p1 = new Product("TV", 1000.00);
+		Product p2 = new Product("Mouse", 40.00);
+		OrderItem oi1 = new OrderItem(1, 1000.00, p1);
+		OrderItem oi2 = new OrderItem(2, 40.00, p2);
+		*/
 		System.out.println("ORDER SUMARY");
 		System.out.println("Order moment: " + sdf2.format(orderDate));
 		System.out.println("Order status: " + OrderStatus.PROCESSING);
 		System.out.println("Client: " + client.getName() + ", " + sdf.format(client.getBirthDate())  + ", " + client.getEmail());
 		System.out.println("Order Items: ");
-		System.out.println(order.total());
-		
-		
-		
+		System.out.println(order.printResultado());
+		System.out.println("R$ " + order.total());
 		sc.close();
 	} 
 
